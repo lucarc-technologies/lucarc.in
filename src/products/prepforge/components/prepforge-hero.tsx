@@ -29,10 +29,10 @@ export function PrepForgeHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-text font-heading leading-tight"
+              className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text font-heading leading-snug"
             >
               Comprehensive{' '}
-              <span className="text-primary font-semibold">
+              <span className="text-primary font-bold">
                 Interview Prep
               </span>{' '}
               Platform
@@ -42,7 +42,7 @@ export function PrepForgeHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-6 text-base sm:text-lg text-text-secondary leading-relaxed font-normal"
+              className="mt-5 text-sm sm:text-base text-text-secondary leading-relaxed font-normal"
             >
               {prepforgeData.description}
             </motion.p>

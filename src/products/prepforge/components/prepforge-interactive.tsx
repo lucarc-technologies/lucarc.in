@@ -48,10 +48,10 @@ export function PrepForgeInteractive() {
           <Badge variant="purple" className="mb-4">
             STAR Story Builder
           </Badge>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-text font-heading">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-text font-heading">
             Craft Impactful Behavioral Stories
           </h2>
-          <p className="mt-4 text-text-secondary text-lg">
+          <p className="mt-3 text-sm sm:text-base text-text-secondary">
             High-level engineering interviews require crisp communication. Try our interactive STAR
             template designed to structure your career milestones.
           </p>

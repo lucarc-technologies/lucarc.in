@@ -17,10 +17,10 @@ export function RoadmapSection() {
           <Badge variant="default" className="mb-4">
             Product Roadmap
           </Badge>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-text font-heading">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-text font-heading">
             An Interconnected Platform of Products
           </h2>
-          <p className="mt-4 text-text-secondary text-lg">
+          <p className="mt-3 text-sm sm:text-base text-text-secondary">
             We are not building isolated applications. We are building an ecosystem connected by
             great engineering, thoughtful design, and exceptional user experience.
           </p>

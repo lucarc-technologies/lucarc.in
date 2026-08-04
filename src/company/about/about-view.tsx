@@ -17,11 +17,11 @@ export function AboutView() {
             <Badge variant="default" className="mb-4">
               About Lucarc
             </Badge>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-text font-heading leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text font-heading leading-snug">
               Software That Helps Businesses Work Smarter and{' '}
-              <span className="text-primary font-semibold">Developers Grow</span>
+              <span className="text-primary font-bold">Developers Grow</span>
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-text-secondary leading-relaxed font-normal">
+            <p className="mt-5 text-sm sm:text-base text-text-secondary leading-relaxed font-normal">
               {companyOverview.philosophy}
             </p>
           </div>
@@ -30,7 +30,7 @@ export function AboutView() {
             <span className="text-xs font-mono uppercase tracking-wider text-primary">
               Our Vision Quote
             </span>
-            <blockquote className="mt-4 text-xl sm:text-3xl font-semibold text-text font-heading leading-snug">
+            <blockquote className="mt-4 text-lg sm:text-2xl font-semibold text-text font-heading leading-snug">
               &ldquo;{companyOverview.visionQuote}&rdquo;
             </blockquote>
           </div>

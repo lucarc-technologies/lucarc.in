@@ -29,18 +29,18 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-text font-heading max-w-4xl mx-auto leading-tight"
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text font-heading max-w-3xl mx-auto leading-snug"
         >
           Building software that helps{' '}
-          <span className="text-primary font-semibold">businesses work smarter</span> and{' '}
-          <span className="text-primary font-semibold">developers grow.</span>
+          <span className="text-primary font-bold">businesses work smarter</span> and{' '}
+          <span className="text-primary font-bold">developers grow.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-6 text-base sm:text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed font-normal"
+          className="mt-5 text-sm sm:text-base text-text-secondary max-w-xl mx-auto leading-relaxed font-normal"
         >
           Lucarc is a software product company focused on building reliable, scalable, and
           user-centric SaaS platforms and engineering tools designed to solve real-world problems.

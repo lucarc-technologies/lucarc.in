@@ -23,10 +23,10 @@ export function PrinciplesSection() {
           <Badge variant="default" className="mb-4">
             Engineering Principles
           </Badge>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-text font-heading">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-text font-heading">
             Great Software is Built on Strong Fundamentals
           </h2>
-          <p className="mt-4 text-text-secondary text-lg">
+          <p className="mt-3 text-sm sm:text-base text-text-secondary">
             At Lucarc, our architectural standards are never compromised. We build systems that perform
             seamlessly today and scale effortlessly tomorrow.
           </p>

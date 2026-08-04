@@ -34,10 +34,10 @@ export function PrepForgeFeatures() {
           <Badge variant="purple" className="mb-4">
             Engineer Toolkit
           </Badge>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-text font-heading">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-text font-heading">
             Everything Needed to Clear Big Tech Interviews
           </h2>
-          <p className="mt-4 text-text-secondary text-lg">
+          <p className="mt-3 text-sm sm:text-base text-text-secondary">
             PrepForge bridges the gap between raw coding practice and real-world system architecture
             interviews with interactive storytelling.
           </p>

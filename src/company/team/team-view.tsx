@@ -17,10 +17,10 @@ export function TeamView() {
             <Badge variant="emerald" className="mb-4">
               Team & Open Source
             </Badge>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-text font-heading leading-tight">
-              Giving Back to the <span className="text-primary font-semibold">Developer Community</span>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text font-heading leading-snug">
+              Giving Back to the <span className="text-primary font-bold">Developer Community</span>
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-text-secondary leading-relaxed font-normal">
+            <p className="mt-5 text-sm sm:text-base text-text-secondary leading-relaxed font-normal">
               We operate as a high-ownership engineering collective. Whenever possible, we
               open-source reusable libraries, utilities, templates, and tools that help other
               developers build better software.

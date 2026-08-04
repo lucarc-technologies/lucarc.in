@@ -1,12 +1,12 @@
-/* Lucarc Production-Grade Design System Tokens (StitchMCP) */
+/* Lucarc Production-Grade Design System Tokens (StitchMCP - Artisanal Workbench) */
 
-/* Modern Subtle Blue Gradient */
+/* Modern Subtle Terracotta Gradient */
 .bg-gradient-lucarc {
-  background: linear-gradient(135deg, #2775F1 0%, #3D8BFF 50%, #5CB6FF 100%);
+  background: linear-gradient(135deg, #D45B3E 0%, #E07055 50%, #F08060 100%);
 }
 
 .text-gradient-lucarc {
-  background: linear-gradient(135deg, #2775F1 0%, #3D8BFF 50%, #5CB6FF 100%);
+  background: linear-gradient(135deg, #D45B3E 0%, #E07055 50%, #F08060 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -24,7 +24,7 @@
 }
 
 .glass-panel-hover:hover {
-  border-color: #2775F1;
-  box-shadow: 0 12px 32px -4px rgba(39, 117, 241, 0.12);
+  border-color: #D45B3E;
+  box-shadow: 0 12px 32px -4px rgba(212, 91, 62, 0.12);
   transform: translateY(-2px);
 }

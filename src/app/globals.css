@@ -2,36 +2,40 @@
 @import "../styles/tokens.css";
 
 :root {
-  --primary: #2775F1;
-  --primary-light: #4FA8FF;
-  --navy: #112140;
+  --primary: #D45B3E;
+  --primary-light: #E07055;
+  --navy: #1C1B18;
 
-  --background: #0B1220;
-  --surface: #111827;
-  --border: #1F2937;
-  --text-primary: #F9FAFB;
-  --text-secondary: #9CA3AF;
+  --background: #FAF6F0;
+  --surface: #FFFFFF;
+  --border: #EBE4DA;
+  --text-primary: #1F1E1A;
+  --text-secondary: #6E6961;
 
   --success: #16A34A;
   --warning: #F59E0B;
   --danger: #DC2626;
-  --info: #2775F1;
+  --info: #D45B3E;
 }
 
 :root[data-theme="light"] {
-  --background: #F8FAFC;
+  --primary: #D45B3E;
+  --primary-light: #E07055;
+  --background: #FAF6F0;
   --surface: #FFFFFF;
-  --border: #E5E7EB;
-  --text-primary: #111827;
-  --text-secondary: #6B7280;
+  --border: #EBE4DA;
+  --text-primary: #1F1E1A;
+  --text-secondary: #6E6961;
 }
 
 :root[data-theme="dark"] {
-  --background: #0B1220;
-  --surface: #111827;
-  --border: #1F2937;
-  --text-primary: #F9FAFB;
-  --text-secondary: #9CA3AF;
+  --primary: #E06342;
+  --primary-light: #F08060;
+  --background: #1A1917;
+  --surface: #24221F;
+  --border: #36332E;
+  --text-primary: #F4EFE6;
+  --text-secondary: #A39C92;
 }
 
 @theme inline {

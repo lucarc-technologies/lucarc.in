@@ -16,10 +16,10 @@ export function ValuesView() {
             <Badge variant="purple" className="mb-4">
               Our Engineering Standards
             </Badge>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-text font-heading leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text font-heading leading-snug">
               Quality Over Quantity in Every Release
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-text-secondary leading-relaxed font-normal">
+            <p className="mt-5 text-sm sm:text-base text-text-secondary leading-relaxed font-normal">
               We focus on building fewer products exceptionally well. Every architectural choice is
               evaluated for long-term maintainability, performance, and security.
             </p>

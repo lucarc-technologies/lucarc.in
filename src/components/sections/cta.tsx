@@ -27,11 +27,11 @@ export function CTASection() {
                 <span>Partnership & Collaboration</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-text font-heading mb-4">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-text font-heading mb-3">
                 Work With Us
               </h2>
 
-              <p className="text-text-secondary text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+              <p className="text-text-secondary text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
                 Alongside building our own products, we selectively collaborate with startups and
                 businesses to develop scalable software solutions. If you&apos;re looking for a
                 technical partner who values clean architecture, maintainability, and product

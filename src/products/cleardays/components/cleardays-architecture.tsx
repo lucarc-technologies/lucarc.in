@@ -12,10 +12,10 @@ export function ClearDaysArchitecture() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
             <Badge variant="emerald">Multi-Tenant Engineering</Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-text font-heading">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-text font-heading">
               Strict Data Isolation at Enterprise Scale
             </h2>
-            <p className="text-text-secondary text-base sm:text-lg leading-relaxed">
+            <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
               In SaaS HRMS systems, security is paramount. ClearDays is engineered with true
               multi-tenant isolation, ensuring that one customer&apos;s data schema can never be
               accessed or breached by another tenant.
