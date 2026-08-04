@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+:root {
+  --primary: #2775F1;
+  --primary-light: #4FA8FF;
+  --navy: #112140;
+
+  --background: #0B1220;
+  --surface: #111827;
+  --border: #1F2937;
+  --text-primary: #F9FAFB;
+  --text-secondary: #9CA3AF;
+
+  --success: #16A34A;
+  --warning: #F59E0B;
+  --danger: #DC2626;
+  --info: #2775F1;
+}
+
+:root[data-theme="light"] {
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --border: #E5E7EB;
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+}
+
+:root[data-theme="dark"] {
+  --background: #0B1220;
+  --surface: #111827;
+  --border: #1F2937;
+  --text-primary: #F9FAFB;
+  --text-secondary: #9CA3AF;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-navy: var(--navy);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --font-sans: var(--font-manrope), var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-sora), var(--font-poppins), var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+  selection-background-color: #2775F1;
+  selection-color: #FFFFFF;
+}
+
+/* Custom scrollbar for production polish */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2775F1;
+}

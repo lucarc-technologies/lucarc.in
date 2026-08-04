@@ -1,0 +1,30 @@
+/* Lucarc Production-Grade Design System Tokens (StitchMCP) */
+
+/* Modern Subtle Blue Gradient */
+.bg-gradient-lucarc {
+  background: linear-gradient(135deg, #2775F1 0%, #3D8BFF 50%, #5CB6FF 100%);
+}
+
+.text-gradient-lucarc {
+  background: linear-gradient(135deg, #2775F1 0%, #3D8BFF 50%, #5CB6FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Minimal Premium Card & Glassmorphism */
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.glass-panel-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: #2775F1;
+  box-shadow: 0 12px 32px -4px rgba(39, 117, 241, 0.12);
+  transform: translateY(-2px);
+}
