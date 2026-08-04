@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a Question in GitHub Discussions
+    url: https://github.com/lucarc-technologies/lucarc.in/discussions
+    about: Ask questions, share ideas, and talk with the Lucarc developer community.
+  - name: Report a Security Vulnerability
+    url: mailto:security@lucarc.in
+    about: Please do not report security issues publicly! Email security@lucarc.in instead.
+  - name: Commercial Support & General Inquiries
+    url: mailto:support@lucarc.in
+    about: Email our support team directly for commercial inquiries or help.

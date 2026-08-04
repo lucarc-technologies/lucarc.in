@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release Tag (e.g., v1.0.0)"
+        required: true
+
+jobs:
+  release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Create Release Tag
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          name: Release ${{ github.event.inputs.version }}
+          generate_release_notes: true

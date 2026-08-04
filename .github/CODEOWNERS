@@ -1,0 +1,21 @@
+# Global primary owner for all files across the Lucarc repository
+* @RupeshDev18
+
+# --- Future Domain & Team Ownership Examples ---
+# As the Lucarc engineering organization scales, uncomment and customize domain codeowners below:
+
+# Backend & API Integrations
+# /src/services/       @backend-team @RupeshDev18
+
+# Product Modules
+# /src/products/       @product-team
+# /src/products/cleardays/  @cleardays-team
+# /src/products/prepforge/  @prepforge-team
+
+# Design System & Styling
+# /src/components/ui/  @ui-team
+# /src/styles/         @ui-team
+
+# Documentation & Governance
+# /README.md           @docs-team
+# /CONTRIBUTING.md     @docs-team

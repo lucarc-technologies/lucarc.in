@@ -1,0 +1,34 @@
+name: Feature Request
+description: Propose a new feature, product enhancement, or idea for Lucarc
+title: "feat(scope): <short description>"
+labels: ["feature", "enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature for Lucarc!
+        Before opening a new request, please check [GitHub Discussions](https://github.com/lucarc-technologies/lucarc.in/discussions) to see if someone has already suggested it.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Is your feature request related to a problem?
+      description: A clear and concise description of what the problem is.
+      placeholder: "I'm always frustrated when..."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like
+      description: A clear and concise description of what you want to happen.
+      placeholder: "I would like ClearDays / PrepForge / the website to..."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Describe alternatives you've considered
+      description: Any alternative solutions or workarounds you have considered.
+    validations:
+      required: false

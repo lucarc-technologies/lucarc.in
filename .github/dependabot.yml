@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Maintain NPM packages
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+
+  # Maintain GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "ci"

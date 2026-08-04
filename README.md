@@ -223,11 +223,58 @@ src/
 
 ---
 
-# Contributing
+# Governance & Community
 
-We welcome contributions that improve the website, documentation, accessibility, and developer experience.
+We are committed to building an open, transparent, and collaborative engineering culture at Lucarc.
 
-Please open an issue before submitting major changes.
+| Document | Purpose |
+|---|---|
+| [**CONTRIBUTING.md**](./CONTRIBUTING.md) | Project setup, folder structure, coding/naming conventions, and PR workflows |
+| [**CODE_OF_CONDUCT.md**](./CODE_OF_CONDUCT.md) | Our Contributor Covenant 2.1 standards of acceptable community behavior |
+| [**SECURITY.md**](./SECURITY.md) | Private vulnerability disclosure policy and SLA (`security@lucarc.in`) |
+| [**SUPPORT.md**](./SUPPORT.md) | Community support channels, Discussions, and commercial help (`support@lucarc.in`) |
+
+---
+
+# Community & Workflow
+
+## 💬 GitHub Discussions
+
+We use **[GitHub Discussions](https://github.com/lucarc-technologies/lucarc.in/discussions)** as our community forum:
+- **General**: Open conversations about software engineering and SaaS product design.
+- **Ideas**: Share feature proposals or product suggestions.
+- **Q&A**: Technical questions about setup, architecture, or configuration.
+- **Announcements**: Follow Lucarc releases, roadmap milestones, and updates.
+- **Show and Tell**: Showcase projects or tools built using Lucarc platforms.
+
+## 🏷️ Standardized Labels
+
+We use standardized repository labels to classify issues and pull requests:
+
+- `bug`: Confirmed errors or broken functionality
+- `feature`: New features or product capabilities
+- `good first issue`: Accessible issues for new contributors
+- `help wanted`: Extra attention or community contributions requested
+- `documentation`: Improvements to markdown guides or docs
+- `enhancement`: Improvements to existing features
+- `performance`: Speed, bundle size, or rendering optimizations
+- `security`: Security-related updates or hardening
+- `breaking change`: Changes that require migration or alter APIs
+
+## 📋 GitHub Projects & Milestones
+
+We organize sprints and roadmap tracking using **GitHub Projects** with standardized workflow columns:
+1. **Backlog**
+2. **Todo**
+3. **In Progress**
+4. **Review**
+5. **Done**
+
+### Active Milestones
+- **ClearDays v1**
+- **PrepForge Beta**
+- **Website v2**
+- **Authentication Platform**
 
 ---
 
@@ -237,7 +284,7 @@ Copyright © 2026 Lucarc.
 
 All rights reserved.
 
-This repository contains the source code for the official Lucarc website.
+This repository contains the source code for the official Lucarc website and ecosystem.
 
 Unauthorized reproduction or redistribution is prohibited unless explicitly permitted.
 

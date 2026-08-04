@@ -1,0 +1,26 @@
+name: Documentation Improvement
+description: Propose an improvement or fix for Lucarc documentation
+title: "docs(scope): <short description>"
+labels: ["documentation"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us improve Lucarc documentation!
+  - type: input
+    id: location
+    attributes:
+      label: Which documentation file or page?
+      description: e.g., README.md, CONTRIBUTING.md, or a website route
+      placeholder: "README.md / CONTRIBUTING.md / website route"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What needs to be improved?
+      description: Describe what is unclear, missing, or incorrect.
+      placeholder: "The instructions for..."
+    validations:
+      required: true

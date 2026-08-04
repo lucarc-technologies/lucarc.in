@@ -1,0 +1,47 @@
+name: Bug Report
+description: Create a report to help us improve Lucarc products and website
+title: "bug(scope): <short description>"
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug in Lucarc!
+        Please fill out the sections below.
+  - type: input
+    id: url
+    attributes:
+      label: Page URL or Route
+      description: What URL or route did the bug occur on? (e.g., /products/cleardays or /company/about)
+      placeholder: "https://lucarc.in/products/cleardays"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Also tell us what you expected to happen.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Please provide step-by-step instructions to reproduce the issue.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment Details
+      description: What browser, OS, or device were you using?
+      placeholder: "e.g., Chrome 125 on Windows 11, or iOS Safari"
+    validations:
+      required: false
