@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { Layers, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cleardaysData, cleardaysMetrics } from '../data';
@@ -20,8 +20,7 @@ export function ClearDaysHero() {
               className="flex items-center gap-2 mb-6"
             >
               <Badge variant="emerald" className="px-4 py-1.5 text-xs sm:text-sm">
-                <Layers className="h-3.5 w-3.5 mr-1.5 inline" />
-                Enterprise HRMS SaaS
+                For Startups, SMEs & Growing Teams
               </Badge>
             </motion.div>
 
@@ -31,9 +30,9 @@ export function ClearDaysHero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text font-heading leading-snug"
             >
-              Modern Multi-Tenant{' '}
+              HR, Attendance & Payroll—{' '}
               <span className="text-primary font-bold">
-                HRMS Platform
+                done without the headache.
               </span>
             </motion.h1>
 

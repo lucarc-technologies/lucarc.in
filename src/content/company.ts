@@ -161,7 +161,7 @@ export const openSourceCommitment = {
   title: 'Open Source at Lucarc',
   description:
     'We believe in giving back to the developer community. Whenever possible, we open-source reusable libraries, utilities, templates, and tools that help other developers build better software.',
-  githubUrl: 'https://github.com/lucarc',
+  githubUrl: 'https://github.com/lucarc-technologies',
 };
 
 export const connectLinks = {
