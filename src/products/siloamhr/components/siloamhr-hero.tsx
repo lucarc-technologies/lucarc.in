@@ -2,12 +2,12 @@
 
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { cleardaysData, cleardaysMetrics } from '../data';
+import { siloamhrData, siloamhrMetrics } from '../data';
 
-export function ClearDaysHero() {
+export function SiloamHRHero() {
   return (
     <section className="relative overflow-hidden pt-12 pb-20 border-b border-border bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +20,7 @@ export function ClearDaysHero() {
               className="flex items-center gap-2 mb-6"
             >
               <Badge variant="emerald" className="px-4 py-1.5 text-xs sm:text-sm">
-                For Startups, SMEs & Growing Teams
+                For Startups, SMEs &amp; Growing Teams
               </Badge>
             </motion.div>
 
@@ -30,7 +30,7 @@ export function ClearDaysHero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-text font-heading leading-snug"
             >
-              HR, Attendance & Payroll—{' '}
+              HR, Attendance &amp; Payroll—{' '}
               <span className="text-primary font-bold">
                 done without the headache.
               </span>
@@ -42,7 +42,7 @@ export function ClearDaysHero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-5 text-sm sm:text-base text-text-secondary leading-relaxed font-normal"
             >
-              {cleardaysData.description}
+              {siloamhrData.description}
             </motion.p>
 
             <motion.div
@@ -51,7 +51,7 @@ export function ClearDaysHero() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              {cleardaysData.highlights?.map((hl) => (
+              {siloamhrData.highlights?.map((hl) => (
                 <div
                   key={hl}
                   className="flex items-center gap-2 text-xs sm:text-sm font-medium text-success bg-success/10 border border-success/20 px-3.5 py-1.5 rounded-full"
@@ -68,15 +68,19 @@ export function ClearDaysHero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mt-10 flex flex-col sm:flex-row gap-4"
             >
-              <a href="mailto:rupesh.dev2002@gmail.com?subject=ClearDays%20Demo%20Request">
+              <a
+                href="https://hr-portal-web-nd7c.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="lg" className="w-full sm:w-auto font-bold">
-                  <span>Schedule a Demo</span>
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  <span>Try SiloamHR Live</span>
                 </Button>
               </a>
               <a href="#features">
                 <Button variant="outline" size="lg">
-                  Explore Architecture & Modules
+                  Explore Architecture &amp; Modules
                 </Button>
               </a>
             </motion.div>
@@ -98,7 +102,7 @@ export function ClearDaysHero() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              {cleardaysMetrics.map((metric) => (
+              {siloamhrMetrics.map((metric) => (
                 <div key={metric.label} className="p-4 rounded-xl bg-background border border-border">
                   <p className="text-2xl font-bold text-text">{metric.value}</p>
                   <p className="text-xs font-semibold text-text-secondary mt-1">{metric.label}</p>

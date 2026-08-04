@@ -7,12 +7,12 @@ export const defaultMetadata: Metadata = {
     template: '%s | Lucarc',
   },
   description:
-    'We create modern SaaS products, developer tools, and AI-powered solutions designed to solve real-world problems. Discover ClearDays HRMS and PrepForge interview prep platform.',
+    'We create modern SaaS products, developer tools, and AI-powered solutions designed to solve real-world problems. Discover SiloamHR HRMS and PrepForge interview prep platform.',
   keywords: [
     'Lucarc',
     'Enterprise SaaS',
     'HRMS',
-    'ClearDays',
+    'SiloamHR',
     'PrepForge',
     'Developer Tools',
     'AI Applications',

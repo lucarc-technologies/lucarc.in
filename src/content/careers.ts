@@ -35,7 +35,7 @@ export const openPositions: CareerPosition[] = [
     department: 'Core Engineering',
     location: 'Remote / India',
     type: 'Full-time',
-    description: 'Lead feature development for ClearDays HRMS and contribute to our cloud-native micro-tenant architecture.',
+    description: 'Lead feature development for SiloamHR HRMS and contribute to our cloud-native micro-tenant architecture.',
     requirements: [
       '5+ years of experience in production web development',
       'Expertise in TypeScript, Next.js, and React',

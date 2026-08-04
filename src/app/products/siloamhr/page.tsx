@@ -1,19 +1,19 @@
 import { Metadata } from 'next';
-import { ClearDaysPage } from '@/products/cleardays/page';
+import { SiloamHRPage } from '@/products/siloamhr/page';
 import { constructMetadata } from '@/core/seo/meta';
 import { getSoftwareApplicationSchema } from '@/core/seo/schema';
-import { cleardaysData } from '@/products/cleardays/data';
+import { siloamhrData } from '@/products/siloamhr/data';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'ClearDays — Modern Multi-Tenant HRMS for Startups & SMEs',
-  description: cleardaysData.description,
-  path: '/products/cleardays',
+  title: 'SiloamHR — Modern Multi-Tenant HRMS for Startups & SMEs',
+  description: siloamhrData.description,
+  path: '/products/siloamhr',
 });
 
 export default function Page() {
   const schema = getSoftwareApplicationSchema(
-    'ClearDays HRMS',
-    cleardaysData.description,
+    'SiloamHR HRMS',
+    siloamhrData.description,
     'BusinessApplication'
   );
 
@@ -23,7 +23,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <ClearDaysPage />
+      <SiloamHRPage />
     </>
   );
 }

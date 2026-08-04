@@ -4,7 +4,7 @@ export function getSitemapConfig(): MetadataRoute.Sitemap {
   const baseUrl = 'https://lucarc.in';
   const routes = [
     '',
-    '/products/cleardays',
+    '/products/siloamhr',
     '/products/prepforge',
     '/company/about',
     '/company/mission',

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Database, Lock, ShieldCheck, Server } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
-export function ClearDaysArchitecture() {
+export function SiloamHRArchitecture() {
   return (
     <section className="py-24 bg-surface border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +16,7 @@ export function ClearDaysArchitecture() {
               Strict Data Isolation at Enterprise Scale
             </h2>
             <p className="text-text-secondary text-sm sm:text-base leading-relaxed">
-              In SaaS HRMS systems, security is paramount. ClearDays is engineered with true
+              In SaaS HRMS systems, security is paramount. SiloamHR is engineered with true
               multi-tenant isolation, ensuring that one customer&apos;s data schema can never be
               accessed or breached by another tenant.
             </p>
@@ -74,7 +74,7 @@ export function ClearDaysArchitecture() {
 
               <div className="space-y-4">
                 <div className="p-4 rounded-xl bg-surface border border-border flex items-center justify-between">
-                  <span className="text-text">Request: https://cleardays.app/api/...</span>
+                  <span className="text-text">Request: https://siloamhr.app/api/...</span>
                   <span className="text-primary text-xs">JWT Tenant ID</span>
                 </div>
 

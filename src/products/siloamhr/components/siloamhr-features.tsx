@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { cleardaysData } from '../data';
+import { siloamhrData } from '../data';
 
 const featureIcons: Record<string, React.ReactNode> = {
   Users: <Users className="h-6 w-6 text-primary" />,
@@ -29,7 +29,7 @@ const featureIcons: Record<string, React.ReactNode> = {
   GitBranch: <GitBranch className="h-6 w-6 text-primary" />,
 };
 
-export function ClearDaysFeatures() {
+export function SiloamHRFeatures() {
   return (
     <section id="features" className="py-24 bg-background relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,13 +41,13 @@ export function ClearDaysFeatures() {
             Comprehensive Multi-Tenant Suite
           </h2>
           <p className="mt-3 text-sm sm:text-base text-text-secondary">
-            Every feature in ClearDays is engineered to simplify organizational complexity without
+            Every feature in SiloamHR is engineered to simplify organizational complexity without
             sacrificing security or customization.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cleardaysData.features.map((feature, idx) => (
+          {siloamhrData.features.map((feature, idx) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 15 }}

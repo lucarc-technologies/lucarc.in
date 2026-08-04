@@ -39,6 +39,6 @@ export function getWebsiteSchema() {
     '@type': 'WebSite',
     name: 'Lucarc',
     url: 'https://lucarc.in',
-    description: 'Lucarc software ecosystem — ClearDays HRMS and PrepForge interview preparation platform.',
+    description: 'Lucarc software ecosystem — SiloamHR HRMS and PrepForge interview preparation platform.',
   };
 }

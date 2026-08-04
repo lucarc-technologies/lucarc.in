@@ -1,8 +1,8 @@
 import { getProductBySlug } from '@/content/products';
 
-export const cleardaysData = getProductBySlug('cleardays')!;
+export const siloamhrData = getProductBySlug('siloamhr')!;
 
-export const cleardaysMetrics = [
+export const siloamhrMetrics = [
   { label: 'Setup Time', value: '<1 Day', detail: 'From signup to your first payroll run' },
   { label: 'HR Modules', value: '9+', detail: 'Attendance, leaves, payroll & more' },
   { label: 'Compliance', value: 'Automated', detail: 'Tax & audit-ready reports on demand' },

@@ -2,12 +2,13 @@ import { Product } from '@/types';
 
 export const productsData: Product[] = [
   {
-    name: 'ClearDays',
-    slug: 'cleardays',
+    name: 'SiloamHR',
+    slug: 'siloamhr',
     tagline: 'Frictionless HR, Attendance & Payroll for Modern Workforces',
     description:
       'An all-in-one Human Resource platform designed to eliminate spreadsheets and administrative clutter. Streamline employee onboarding, automate leave tracking, simplify attendance, and run error-free payroll in minutes.',
     status: 'current',
+    demoUrl: 'https://hr-portal-web-nd7c.onrender.com/',
     highlights: [
       'Instant employee directory & self-service document vault',
       'One-click leave approvals & automated attendance tracking',
@@ -76,6 +77,7 @@ export const productsData: Product[] = [
     description:
       'A proven, pattern-driven preparation platform built by senior engineers. Move beyond memorizing solutions—master the 22 core algorithmic patterns, tackle real-world system design, and structure winning behavioral stories.',
     status: 'current',
+    demoUrl: 'https://dsa-tracker-frontend-3kke.onrender.com/',
     highlights: [
       '22 high-yield algorithmic patterns across 300+ curated challenges',
       'Interactive STAR story builder for standout behavioral interviews',
@@ -136,3 +138,4 @@ export const productsData: Product[] = [
 export function getProductBySlug(slug: string): Product | undefined {
   return productsData.find((p) => p.slug === slug);
 }
+

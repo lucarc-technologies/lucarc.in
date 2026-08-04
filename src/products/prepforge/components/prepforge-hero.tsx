@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ExternalLink } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { prepforgeData, prepforgeStats } from '../data';
@@ -68,15 +68,20 @@ export function PrepForgeHero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mt-10 flex flex-col sm:flex-row gap-4"
             >
-              <a href="#interactive-star">
+              <a
+                href="https://dsa-tracker-frontend-3kke.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="lg" className="w-full sm:w-auto font-bold">
-                  <span>Try STAR Story Builder</span>
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ExternalLink className="mr-2 h-5 w-5" />
+                  <span>Try PrepForge Live</span>
                 </Button>
               </a>
-              <a href="#features">
+              <a href="#interactive-star">
                 <Button variant="outline" size="lg">
-                  Explore 150+ DSA Tracker
+                  Try STAR Story Builder
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </a>
             </motion.div>

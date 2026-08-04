@@ -8,10 +8,10 @@ export const faqList: FAQItem[] = [
       'Lucarc is a software product company focused on building reliable, scalable, and user-centric applications. We focus on Enterprise SaaS, HR & Workforce Management, Developer Tools, Career Platforms, and Practical AI Applications.',
   },
   {
-    category: 'ClearDays HRMS',
-    question: 'What makes ClearDays different from traditional HRMS tools?',
+    category: 'SiloamHR HRMS',
+    question: 'What makes SiloamHR different from traditional HRMS tools?',
     answer:
-      'ClearDays is built on a modern multi-tenant cloud architecture with strict tenant isolation, customizable RBAC, and seamless workflow automation. Unlike legacy HR tools that feel cluttered, ClearDays prioritizes clarity, performance, and compliance.',
+      'SiloamHR is built on a modern multi-tenant cloud architecture with strict tenant isolation, customizable RBAC, and seamless workflow automation. Unlike legacy HR tools that feel cluttered, SiloamHR prioritizes clarity, performance, and compliance.',
   },
   {
     category: 'PrepForge',

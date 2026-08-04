@@ -72,10 +72,10 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <Link
-                  href="/products/cleardays"
+                  href="/products/siloamhr"
                   className="hover:text-cyan-400 transition-colors flex items-center gap-1 group"
                 >
-                  <span>ClearDays HRMS</span>
+                  <span>SiloamHR HRMS</span>
                   <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>

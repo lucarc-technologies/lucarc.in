@@ -11,8 +11,7 @@ import {
   Sun,
   Moon,
   ChevronDown,
-  Layers,
-  Code2,
+  ArrowUpRight,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/core/providers/theme-provider';
@@ -128,48 +127,56 @@ export function Navbar() {
               <AnimatePresence>
                 {productsOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute left-0 top-full mt-1 w-72 rounded-2xl border border-border bg-surface p-3 shadow-md"
+                    initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.97 }}
+                    transition={{ duration: 0.15, ease: 'easeOut' }}
+                    className="absolute left-0 top-full mt-2 w-64 rounded-2xl border border-border bg-surface p-2 shadow-lg"
                   >
-                    <div className="flex flex-col gap-1">
+                    <div className="flex flex-col gap-0.5">
                       <Link
-                        href="/products/cleardays"
+                        href="/products/siloamhr"
                         onClick={closeDropdowns}
-                        className="flex items-start gap-3 rounded-xl p-3 hover:bg-background transition-colors group"
+                        className="flex items-center gap-3 rounded-xl px-3 py-3 hover:bg-background transition-colors group"
                       >
-                        <div className="mt-0.5 rounded-lg bg-primary/10 p-2 border border-primary/20 group-hover:border-primary/40 transition-colors">
-                          <Layers className="h-5 w-5 text-primary" />
+                        <div className="h-9 w-9 shrink-0 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-sm">
+                          <span className="text-[11px] font-black text-white tracking-tight">HR</span>
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-text group-hover:text-primary transition-colors">
-                            ClearDays
+                            SiloamHR
                           </p>
-                          <p className="text-xs text-text-secondary">
-                            Modern Multi-Tenant HRMS for Startups
+                          <p className="text-xs text-text-secondary leading-snug">
+                            HRMS for Startups &amp; SMEs
                           </p>
                         </div>
+                        <ArrowUpRight className="h-3.5 w-3.5 ml-auto text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                       </Link>
 
                       <Link
                         href="/products/prepforge"
                         onClick={closeDropdowns}
-                        className="flex items-start gap-3 rounded-xl p-3 hover:bg-background transition-colors group"
+                        className="flex items-center gap-3 rounded-xl px-3 py-3 hover:bg-background transition-colors group"
                       >
-                        <div className="mt-0.5 rounded-lg bg-primary/10 p-2 border border-primary/20 group-hover:border-primary/40 transition-colors">
-                          <Code2 className="h-5 w-5 text-primary" />
+                        <div className="h-9 w-9 shrink-0 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center shadow-sm">
+                          <span className="text-[11px] font-black text-white tracking-tight">PF</span>
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-text group-hover:text-primary transition-colors">
                             PrepForge
                           </p>
-                          <p className="text-xs text-text-secondary">
-                            Interview Prep Platform for Engineers
+                          <p className="text-xs text-text-secondary leading-snug">
+                            Interview Prep for Engineers
                           </p>
                         </div>
+                        <ArrowUpRight className="h-3.5 w-3.5 ml-auto text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
                       </Link>
+                    </div>
+
+                    <div className="mt-2 pt-2 border-t border-border px-3 pb-1">
+                      <p className="text-[10px] text-text-secondary tracking-wider uppercase font-medium">
+                        2 products live · More coming
+                      </p>
                     </div>
                   </motion.div>
                 )}
@@ -261,19 +268,23 @@ export function Navbar() {
                 Products
               </div>
               <Link
-                href="/products/cleardays"
+                href="/products/siloamhr"
                 onClick={closeDropdowns}
                 className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-text hover:bg-background"
               >
-                <Layers className="h-4 w-4 text-primary" />
-                ClearDays
+                <div className="h-6 w-6 shrink-0 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center">
+                  <span className="text-[9px] font-black text-white">HR</span>
+                </div>
+                SiloamHR
               </Link>
               <Link
                 href="/products/prepforge"
                 onClick={closeDropdowns}
                 className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-text hover:bg-background"
               >
-                <Code2 className="h-4 w-4 text-primary" />
+                <div className="h-6 w-6 shrink-0 rounded-lg bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
+                  <span className="text-[9px] font-black text-white">PF</span>
+                </div>
                 PrepForge
               </Link>
 

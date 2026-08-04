@@ -100,8 +100,8 @@ export const engineeringPrinciples: EngineeringPrinciple[] = [
 
 export const productRoadmap: RoadmapItem[] = [
   {
-    id: 'cleardays',
-    name: 'ClearDays',
+    id: 'siloamhr',
+    name: 'SiloamHR',
     category: 'HR & Workforce',
     status: 'Current',
     description: 'Modern multi-tenant HRMS built for startups, SMEs, and growing organizations.',

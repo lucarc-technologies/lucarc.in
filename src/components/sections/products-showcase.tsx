@@ -10,6 +10,7 @@ import {
   Shield,
   CheckCircle2,
   Sparkles,
+  ExternalLink,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -31,7 +32,7 @@ export function ProductsShowcase() {
           </p>
         </div>
 
-        {/* ClearDays Featured Product Card */}
+        {/* SiloamHR Featured Product Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -48,7 +49,7 @@ export function ProductsShowcase() {
                       <Layers className="h-7 w-7" />
                     </div>
                     <div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-text">ClearDays</h3>
+                      <h3 className="text-2xl sm:text-3xl font-bold text-text">SiloamHR</h3>
                       <p className="text-xs font-mono uppercase tracking-wider text-primary">
                         HR, Attendance & Payroll
                       </p>
@@ -58,9 +59,8 @@ export function ProductsShowcase() {
                 </div>
 
                 <p className="text-text-secondary text-sm sm:text-base leading-relaxed mb-6">
-                  Replace your messy HR spreadsheets with a clear, organized platform. From
-                  onboarding new hires to running payroll—ClearDays handles the routine so your
-                  managers can focus on their people.
+                  Every feature in SiloamHR is engineered to simplify organizational complexity without
+                  sacrificing security or customization.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
@@ -85,17 +85,29 @@ export function ProductsShowcase() {
                   <Shield className="h-4 w-4 text-primary" />
                   <span>Enterprise-grade security & compliance</span>
                 </div>
-                <Link href="/products/cleardays">
-                  <Button variant="default">
-                    <span>Explore ClearDays</span>
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <a
+                    href="https://hr-portal-web-nd7c.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="glow" size="sm">
+                      <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+                      <span>Try Live</span>
+                    </Button>
+                  </a>
+                  <Link href="/products/siloamhr">
+                    <Button variant="default">
+                      <span>Explore SiloamHR</span>
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>
 
-          {/* ClearDays Visual Architecture Preview Card */}
+          {/* SiloamHR Visual Architecture Preview Card */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -106,7 +118,7 @@ export function ProductsShowcase() {
             <div className="w-full rounded-xl border border-border bg-surface p-8 flex flex-col justify-between shadow-sm">
               <div>
                 <h4 className="text-sm font-semibold uppercase tracking-wider text-text-secondary mb-4">
-                  Why teams love ClearDays
+                  Why teams love SiloamHR
                 </h4>
                 <div className="space-y-4">
                   <div className="p-4 rounded-xl border border-border bg-background">
@@ -233,12 +245,24 @@ export function ProductsShowcase() {
                   <Sparkles className="h-4 w-4 text-primary" />
                   <span>AI Mock Coach — Coming Soon</span>
                 </div>
-                <Link href="/products/prepforge">
-                  <Button variant="default">
-                    <span>Explore PrepForge</span>
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <a
+                    href="https://dsa-tracker-frontend-3kke.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button variant="glow" size="sm">
+                      <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+                      <span>Try Live</span>
+                    </Button>
+                  </a>
+                  <Link href="/products/prepforge">
+                    <Button variant="default">
+                      <span>Explore PrepForge</span>
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>
