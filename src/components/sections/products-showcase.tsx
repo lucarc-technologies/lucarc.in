@@ -87,7 +87,7 @@ export function ProductsShowcase() {
                 </div>
                 <div className="flex items-center gap-2 flex-wrap">
                   <a
-                    href="https://hr-portal-web-nd7c.onrender.com/"
+                    href="https://siloam.rupesh-yadav.fun/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -247,7 +247,7 @@ export function ProductsShowcase() {
                 </div>
                 <div className="flex items-center gap-2 flex-wrap">
                   <a
-                    href="https://dsa-tracker-frontend-3kke.onrender.com/"
+                    href="https://prepforge.rupesh-yadav.fun/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

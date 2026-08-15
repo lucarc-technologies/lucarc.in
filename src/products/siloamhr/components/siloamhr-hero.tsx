@@ -69,7 +69,7 @@ export function SiloamHRHero() {
               className="mt-10 flex flex-col sm:flex-row gap-4"
             >
               <a
-                href="https://hr-portal-web-nd7c.onrender.com/"
+                href="https://siloam.rupesh-yadav.fun/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

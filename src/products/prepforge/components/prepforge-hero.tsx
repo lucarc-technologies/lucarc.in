@@ -69,7 +69,7 @@ export function PrepForgeHero() {
               className="mt-10 flex flex-col sm:flex-row gap-4"
             >
               <a
-                href="https://dsa-tracker-frontend-3kke.onrender.com/"
+                href="https://prepforge.rupesh-yadav.fun/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
