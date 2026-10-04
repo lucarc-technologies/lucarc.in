@@ -11,11 +11,33 @@ import {
   CheckCircle2,
   Sparkles,
   ExternalLink,
+  Terminal,
+  Cpu,
+  Users,
+  LucideIcon,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { productsData } from '@/content/products';
+
+const productIcons: Record<string, LucideIcon> = {
+  siloamhr: Layers,
+  prepforge: Code2,
+  interview: Cpu,
+  cli: Terminal,
+};
+
+const productCategoryBadges: Record<string, { label: string; variant: 'emerald' | 'purple' | 'secondary' | 'default' }> = {
+  siloamhr: { label: 'Enterprise SaaS', variant: 'emerald' },
+  prepforge: { label: 'Developer Tool', variant: 'purple' },
+  interview: { label: 'B2B Platform', variant: 'purple' },
+  cli: { label: 'Open Source CLI', variant: 'default' },
+};
 
 export function ProductsShowcase() {
+  const currentProducts = productsData.filter((p) => p.status === 'current');
+  const futureProducts = productsData.filter((p) => p.status === 'future');
+
   return (
     <section id="products" className="py-24 bg-background relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,241 +54,195 @@ export function ProductsShowcase() {
           </p>
         </div>
 
-        {/* SiloamHR Featured Product Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch mb-12">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-7 flex"
-          >
-            <div className="w-full rounded-xl border border-border bg-surface p-8 sm:p-10 shadow-sm relative overflow-hidden flex flex-col justify-between group">
-              <div>
-                <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 text-primary">
-                      <Layers className="h-7 w-7" />
-                    </div>
+        {/* Current Flagship Products */}
+        <div className="space-y-12 mb-16">
+          {currentProducts.map((product, index) => {
+            const Icon = productIcons[product.slug] || Layers;
+            const badge = productCategoryBadges[product.slug] || { label: 'Product', variant: 'default' };
+            const isReversed = index % 2 === 1;
+
+            return (
+              <div
+                key={product.slug}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch"
+              >
+                {/* Main Product Card */}
+                <motion.div
+                  initial={{ opacity: 0, x: isReversed ? 20 : -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className={`lg:col-span-7 flex ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}
+                >
+                  <div className="w-full rounded-xl border border-border bg-surface p-8 sm:p-10 shadow-sm relative overflow-hidden flex flex-col justify-between group">
                     <div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-text">SiloamHR</h3>
-                      <p className="text-xs font-mono uppercase tracking-wider text-primary">
-                        HR, Attendance & Payroll
+                      <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
+                        <div className="flex items-center gap-3">
+                          <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 text-primary">
+                            <Icon className="h-7 w-7" />
+                          </div>
+                          <div>
+                            <h3 className="text-2xl sm:text-3xl font-bold text-text">{product.name}</h3>
+                            <p className="text-xs font-mono uppercase tracking-wider text-primary">
+                              {product.tagline.split('—')[0]}
+                            </p>
+                          </div>
+                        </div>
+                        <Badge variant={badge.variant}>{badge.label}</Badge>
+                      </div>
+
+                      <p className="text-text-secondary text-sm sm:text-base leading-relaxed mb-6">
+                        {product.description}
                       </p>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                        {product.features.slice(0, 6).map((feat) => (
+                          <div key={feat.title} className="flex items-start gap-2 text-sm text-text-secondary">
+                            <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                            <span>{feat.title}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="pt-6 border-t border-border flex items-center justify-between flex-wrap gap-4">
+                      <div className="flex items-center gap-2 text-xs text-text-secondary">
+                        <Shield className="h-4 w-4 text-primary" />
+                        <span>Production-ready engineering & security</span>
+                      </div>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        {product.demoUrl && (
+                          <a
+                            href={product.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button variant="glow" size="sm">
+                              <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+                              <span>Try Live</span>
+                            </Button>
+                          </a>
+                        )}
+                        <Link href={`/products/${product.slug}`}>
+                          <Button variant="default">
+                            <span>Explore {product.name}</span>
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                  <Badge variant="emerald">Enterprise SaaS</Badge>
-                </div>
+                </motion.div>
 
-                <p className="text-text-secondary text-sm sm:text-base leading-relaxed mb-6">
-                  Every feature in SiloamHR is engineered to simplify organizational complexity without
-                  sacrificing security or customization.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  {[
-                    'Employee directory & digital document vault',
-                    'One-click attendance tracking',
-                    'Automated leave balances & approvals',
-                    'Salary slips generated in seconds',
-                    'Custom roles for HR, managers & staff',
-                    'Manage multiple offices from one place',
-                  ].map((feat) => (
-                    <div key={feat} className="flex items-center gap-2 text-sm text-text-secondary">
-                      <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
-                      <span>{feat}</span>
+                {/* Highlights / Why Choose Card */}
+                <motion.div
+                  initial={{ opacity: 0, x: isReversed ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className={`lg:col-span-5 flex ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}
+                >
+                  <div className="w-full rounded-xl border border-border bg-surface p-8 flex flex-col justify-between shadow-sm">
+                    <div>
+                      <h4 className="text-sm font-semibold uppercase tracking-wider text-text-secondary mb-4">
+                        Why teams choose {product.name}
+                      </h4>
+                      <div className="space-y-4">
+                        {product.highlights?.map((highlight, hIdx) => (
+                          <div key={hIdx} className="p-4 rounded-xl border border-border bg-background">
+                            <p className="text-sm font-bold text-text mb-1">Key Advantage #{hIdx + 1}</p>
+                            <p className="text-xs text-text-secondary leading-relaxed">
+                              {highlight}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-border flex items-center justify-between flex-wrap gap-4">
-                <div className="flex items-center gap-2 text-xs text-text-secondary">
-                  <Shield className="h-4 w-4 text-primary" />
-                  <span>Enterprise-grade security & compliance</span>
-                </div>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <a
-                    href="https://siloam.rupesh-yadav.fun/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="glow" size="sm">
-                      <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
-                      <span>Try Live</span>
-                    </Button>
-                  </a>
-                  <Link href="/products/siloamhr">
-                    <Button variant="default">
-                      <span>Explore SiloamHR</span>
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* SiloamHR Visual Architecture Preview Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-5 flex"
-          >
-            <div className="w-full rounded-xl border border-border bg-surface p-8 flex flex-col justify-between shadow-sm">
-              <div>
-                <h4 className="text-sm font-semibold uppercase tracking-wider text-text-secondary mb-4">
-                  Why teams love SiloamHR
-                </h4>
-                <div className="space-y-4">
-                  <div className="p-4 rounded-xl border border-border bg-background">
-                    <p className="text-sm font-bold text-text mb-1">No more chasing approvals</p>
-                    <p className="text-xs text-text-secondary">
-                      Leave requests and attendance corrections are approved in one tap—no email threads needed.
-                    </p>
+                    <div className="mt-6 pt-6 border-t border-border flex items-center justify-between text-xs text-text-secondary">
+                      <span>Status: Active Product</span>
+                      <span className="text-primary font-semibold">Live Ecosystem</span>
+                    </div>
                   </div>
-                  <div className="p-4 rounded-xl border border-border bg-background">
-                    <p className="text-sm font-bold text-text mb-1">Payroll without panic</p>
-                    <p className="text-xs text-text-secondary">
-                      Salary slips, deduction calculations, and compliance exports—done automatically every month.
-                    </p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-border bg-background">
-                    <p className="text-sm font-bold text-text mb-1">One dashboard for your whole team</p>
-                    <p className="text-xs text-text-secondary">
-                      Manage multiple offices, remote staff, and departments from a single, clean workspace.
-                    </p>
-                  </div>
-                </div>
+                </motion.div>
               </div>
-              <div className="mt-6 pt-6 border-t border-border flex items-center justify-between text-xs text-text-secondary">
-                <span>Status: In Production</span>
-                <span className="text-primary font-semibold">Best for Startups & SMEs</span>
-              </div>
-            </div>
-          </motion.div>
+            );
+          })}
         </div>
 
-        {/* PrepForge Featured Product Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* PrepForge Visual / Features Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-5 flex order-2 lg:order-1"
-          >
-            <div className="w-full rounded-xl border border-border bg-surface p-8 flex flex-col justify-between shadow-sm">
-              <div>
-                <h4 className="text-sm font-semibold uppercase tracking-wider text-text-secondary mb-4">
-                  Why engineers choose PrepForge
-                </h4>
-                <div className="space-y-4">
-                  <div className="p-4 rounded-xl border border-border bg-background">
-                    <p className="text-sm font-bold text-text mb-1">Stop memorizing. Start understanding.</p>
-                    <p className="text-xs text-text-secondary">
-                      Learn the 22 patterns that repeat across 90% of interview problems at top tech companies.
-                    </p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-border bg-background">
-                    <p className="text-sm font-bold text-text mb-1">Walk into behaviorals with confidence</p>
-                    <p className="text-xs text-text-secondary">
-                      Structure your real career experiences into crisp, memorable STAR stories that stand out.
-                    </p>
-                  </div>
-                  <div className="p-4 rounded-xl border border-border bg-background">
-                    <p className="text-sm font-bold text-text mb-1">Design systems, not just code</p>
-                    <p className="text-xs text-text-secondary">
-                      Clear, visual roadmaps for designing scalable architectures from first principles.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-6 pt-6 border-t border-border flex items-center justify-between text-xs text-text-secondary">
-                <span>For software engineers</span>
-                <span className="text-primary font-semibold">AI Coach Coming Soon</span>
-              </div>
+        {/* Upcoming Ecosystem Additions (Lucarc Interview & create-lucarc-app) */}
+        {futureProducts.length > 0 && (
+          <div>
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <Badge variant="purple" className="mb-3">
+                In Active Development
+              </Badge>
+              <h3 className="text-lg sm:text-xl font-semibold text-text font-heading">
+                Expanding the Lucarc Ecosystem
+              </h3>
+              <p className="mt-2 text-xs sm:text-sm text-text-secondary">
+                Next-generation developer platforms and enterprise hiring infrastructure built for modern workflows.
+              </p>
             </div>
-          </motion.div>
 
-          {/* PrepForge Main Description */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-7 flex order-1 lg:order-2"
-          >
-            <div className="w-full rounded-xl border border-border bg-surface p-8 sm:p-10 shadow-sm relative overflow-hidden flex flex-col justify-between group">
-              <div>
-                <div className="flex items-center justify-between flex-wrap gap-3 mb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-2xl bg-primary/10 border border-primary/20 text-primary">
-                      <Code2 className="h-7 w-7" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-text">PrepForge</h3>
-                      <p className="text-xs font-mono uppercase tracking-wider text-primary">
-                        Tech Interview Preparation
-                      </p>
-                    </div>
-                  </div>
-                  <Badge variant="purple">Developer Tool</Badge>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {futureProducts.map((product, idx) => {
+                const Icon = productIcons[product.slug] || Terminal;
+                const badge = productCategoryBadges[product.slug] || { label: 'Upcoming', variant: 'default' };
 
-                <p className="text-text-secondary text-sm sm:text-base leading-relaxed mb-6">
-                  Stop grinding random LeetCode questions. PrepForge gives you a structured,
-                  pattern-based roadmap to crack algorithms, system design, and behavioral rounds
-                  at FAANG and top-tier companies.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                  {[
-                    '22 high-yield DSA patterns',
-                    'Visual system design roadmaps',
-                    'Behavioral interview playbook',
-                    'STAR story builder & templates',
-                    '4, 8 & 12-week prep timelines',
-                    'Interview readiness score',
-                  ].map((feat) => (
-                    <div key={feat} className="flex items-center gap-2 text-sm text-text-secondary">
-                      <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="pt-6 border-t border-border flex items-center justify-between flex-wrap gap-4">
-                <div className="flex items-center gap-2 text-xs text-text-secondary">
-                  <Sparkles className="h-4 w-4 text-primary" />
-                  <span>AI Mock Coach — Coming Soon</span>
-                </div>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <a
-                    href="https://prepforge.rupesh-yadav.fun/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                return (
+                  <motion.div
+                    key={product.slug}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.1 }}
+                    className="rounded-xl border border-border bg-surface p-8 shadow-sm flex flex-col justify-between"
                   >
-                    <Button variant="glow" size="sm">
-                      <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
-                      <span>Try Live</span>
-                    </Button>
-                  </a>
-                  <Link href="/products/prepforge">
-                    <Button variant="default">
-                      <span>Explore PrepForge</span>
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </div>
+                    <div>
+                      <div className="flex items-center justify-between flex-wrap gap-2 mb-4">
+                        <div className="flex items-center gap-3">
+                          <div className="p-2.5 rounded-xl bg-primary/10 border border-primary/20 text-primary">
+                            <Icon className="h-6 w-6" />
+                          </div>
+                          <div>
+                            <h4 className="text-xl font-bold text-text">{product.name}</h4>
+                            <p className="text-xs font-mono uppercase tracking-wider text-primary">
+                              {product.tagline.split('—')[0].slice(0, 45)}...
+                            </p>
+                          </div>
+                        </div>
+                        <Badge variant={badge.variant}>{badge.label}</Badge>
+                      </div>
+
+                      <p className="text-sm text-text-secondary leading-relaxed mb-6">
+                        {product.description}
+                      </p>
+
+                      <div className="space-y-2.5 mb-6">
+                        {product.features.slice(0, 3).map((feat) => (
+                          <div key={feat.title} className="flex items-start gap-2 text-xs text-text-secondary">
+                            <Sparkles className="h-3.5 w-3.5 text-primary flex-shrink-0 mt-0.5" />
+                            <span>
+                              <strong className="text-text font-medium">{feat.title}</strong>: {feat.description}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="pt-5 border-t border-border flex items-center justify-between text-xs text-text-secondary">
+                      <span className="flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                        In Development
+                      </span>
+                      <span className="font-mono text-primary font-medium">Coming Soon</span>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
-          </motion.div>
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );

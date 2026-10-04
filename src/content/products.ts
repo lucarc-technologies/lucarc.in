@@ -133,6 +133,118 @@ export const productsData: Product[] = [
       'Engineered for distraction-free learning and rapid pattern mastery',
     ],
   },
+  {
+    name: 'Lucarc Interview',
+    slug: 'interview',
+    tagline: 'Collaborative Technical Hiring Platform with Sandboxed Execution & AI Rubrics',
+    description:
+      'A real-time technical interviewing workspace designed for engineering teams and recruiters. Conduct frictionless live coding sessions, evaluate system designs on an interactive canvas, and generate objective candidate scorecards automatically.',
+    status: 'future',
+    highlights: [
+      'Multi-language sandboxed code editor with automated test assertions',
+      'Interactive architecture canvas for deep system design rounds',
+      'AI-powered interview co-pilot with live audio transcription & rubric scoring',
+    ],
+    features: [
+      {
+        title: 'Collaborative Monaco Editor',
+        description: 'Sub-millisecond multi-cursor pair programming with syntax highlighting across 25+ programming languages.',
+        iconName: 'Code2',
+        category: 'Live Coding',
+      },
+      {
+        title: 'Sandboxed Code Runner',
+        description: 'Isolated containerized execution with strict CPU/memory limits, custom I/O, and automated test cases.',
+        iconName: 'Terminal',
+        category: 'Execution',
+      },
+      {
+        title: 'System Design Canvas',
+        description: 'Infinite collaborative whiteboard equipped with cloud architecture components, databases, and microservice stencils.',
+        iconName: 'Cpu',
+        category: 'Architecture',
+      },
+      {
+        title: 'Standardized Rubric Scoring',
+        description: 'Evaluate problem solving, code quality, communication, and architecture with synchronized interviewer notes.',
+        iconName: 'CheckSquare',
+        category: 'Evaluation',
+      },
+      {
+        title: 'AI Interview Intelligence',
+        description: 'Live transcription, objective competency ratings, and instant executive summaries for hiring committees.',
+        iconName: 'Sparkles',
+        category: 'AI Assistant',
+      },
+      {
+        title: 'Anti-Cheat Telemetry',
+        description: 'Focus tracking, window blur alerts, and paste payload monitoring to maintain high hiring integrity.',
+        iconName: 'Shield',
+        category: 'Integrity',
+      },
+    ],
+    architectureNotes: [
+      'Built on WebSockets + Yjs CRDT for zero-latency collaborative synchronization',
+      'MicroVM / Docker container clustering for safe isolated code evaluation',
+      'End-to-end encrypted WebRTC audio, video, and screen sharing streams',
+    ],
+  },
+  {
+    name: 'create-lucarc-app',
+    slug: 'cli',
+    tagline: 'The Ultimate Full-Stack Project Generator for Modern Software Teams',
+    description:
+      'An interactive NPX CLI tool that scaffolds production-ready, fully-configured applications in seconds. Choose your preferred frontend (Next.js, React, Angular), backend (Fastify, Express, Spring Boot, FastAPI), database, and UI tokens with zero boilerplate friction.',
+    status: 'future',
+    highlights: [
+      'Composable modular scaffolding across Next.js, React, Angular, Spring Boot, & FastAPI',
+      'Auto-configured Tailwind CSS v4, shadcn/ui, and Prisma/Drizzle ORM bindings',
+      'One-command Docker Compose orchestration and CI/CD pipelines',
+    ],
+    features: [
+      {
+        title: 'Interactive CLI Engine',
+        description: 'Beautiful, prompt-driven terminal interface powered by Clack with instant project configuration.',
+        iconName: 'Terminal',
+        category: 'Developer Experience',
+      },
+      {
+        title: 'Multi-Framework Frontend',
+        description: 'Seamlessly initialize Next.js 15 (App Router), React 19 (Vite), Angular 19, or Vue with strict TypeScript.',
+        iconName: 'Layers',
+        category: 'Frontend',
+      },
+      {
+        title: 'Polyglot Backend Stacks',
+        description: 'Choose between Node.js (Fastify/Express), Java 21 (Spring Boot 3), or Python 3.12 (FastAPI).',
+        iconName: 'GitBranch',
+        category: 'Backend',
+      },
+      {
+        title: 'Automated DB & ORM Wiring',
+        description: 'Generates ready-to-run PostgreSQL, MySQL, or MongoDB configurations with Drizzle, Prisma, or JPA.',
+        iconName: 'BarChart3',
+        category: 'Database',
+      },
+      {
+        title: 'Instant UI & Design Systems',
+        description: 'Pre-configures Tailwind CSS v4, Lucide icons, and shadcn/ui components out of the box.',
+        iconName: 'Sparkles',
+        category: 'Styling',
+      },
+      {
+        title: 'DevOps & Container Ready',
+        description: 'Includes auto-generated docker-compose.yml, GitHub Actions workflows, and pre-commit hooks.',
+        iconName: 'Shield',
+        category: 'DevOps',
+      },
+    ],
+    architectureNotes: [
+      'Modular AST-based and templated generation engine for zero conflicting dependencies',
+      'Zero external installation needed: run directly via npx create-lucarc-app',
+      'Strict TypeScript and ESLint pre-configured across all generated workspaces',
+    ],
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {

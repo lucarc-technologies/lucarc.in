@@ -2,11 +2,27 @@
 
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu } from 'lucide-react';
+import {
+  Building2,
+  Users,
+  Terminal,
+  Rocket,
+  Sparkles,
+  Cpu,
+  LucideIcon,
+} from 'lucide-react';
 import { companyOverview, whatWeBuild } from '@/content/company';
 import { Badge } from '@/components/ui/badge';
 import { PrinciplesSection } from '@/components/sections/principles';
 import { CTASection } from '@/components/sections/cta';
+
+const iconMap: Record<string, LucideIcon> = {
+  Building2,
+  Users,
+  Terminal,
+  Rocket,
+  Sparkles,
+};
 
 export function AboutView() {
   return (
@@ -53,24 +69,28 @@ export function AboutView() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whatWeBuild.map((area, idx) => (
-              <motion.div
-                key={area.title}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="p-6 rounded-xl border border-border bg-surface flex flex-col justify-between shadow-sm"
-              >
-                <div>
-                  <div className="p-3 w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-5">
-                    <Cpu className="h-6 w-6" />
+            {whatWeBuild.map((area, idx) => {
+              const Icon = iconMap[area.iconName] || Cpu;
+
+              return (
+                <motion.div
+                  key={area.title}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  className="p-6 rounded-xl border border-border bg-surface flex flex-col justify-between shadow-sm"
+                >
+                  <div>
+                    <div className="p-3 w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-5">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-text mb-2">{area.title}</h3>
+                    <p className="text-sm text-text-secondary leading-relaxed">{area.description}</p>
                   </div>
-                  <h3 className="text-xl font-bold text-text mb-2">{area.title}</h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">{area.description}</p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

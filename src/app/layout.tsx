@@ -5,7 +5,7 @@ import { Navbar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { CoreProviders } from '@/core/providers';
 import { defaultMetadata } from '@/core/seo/meta';
-import { getOrganizationSchema } from '@/core/seo/schema';
+import { getOrganizationSchema, getWebsiteSchema } from '@/core/seo/schema';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -43,6 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const orgSchema = getOrganizationSchema();
+  const websiteSchema = getWebsiteSchema();
 
   return (
     <html
@@ -54,6 +55,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />

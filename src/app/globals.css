@@ -72,8 +72,11 @@ body {
   font-family: var(--font-sans);
   overflow-x: hidden;
   min-height: 100vh;
-  selection-background-color: #2775F1;
-  selection-color: #FFFFFF;
+}
+
+::selection {
+  background-color: var(--primary);
+  color: #FFFFFF;
 }
 
 /* Custom scrollbar for production polish */
@@ -91,5 +94,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2775F1;
+  background: var(--primary);
 }
