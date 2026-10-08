@@ -15,6 +15,10 @@ export interface Product {
   highlights?: string[];
   architectureNotes?: string[];
   demoUrl?: string;
+  npmUrl?: string;
+  githubUrl?: string;
+  command?: string;
+  version?: string;
 }
 
 export interface EngineeringPrinciple {

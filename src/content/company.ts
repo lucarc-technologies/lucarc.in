@@ -114,18 +114,25 @@ export const productRoadmap: RoadmapItem[] = [
     description: 'Comprehensive interview preparation platform designed for software engineers.',
   },
   {
+    id: 'cli-tool',
+    name: 'create-lucarc-app',
+    category: 'Developer Tools',
+    status: 'Current',
+    description: 'Interactive full-stack NPX project generator published on npm across React, Next.js, Angular, Fastify, Spring Boot, and FastAPI.',
+  },
+  {
+    id: 'personal-os',
+    name: 'PersonalOS',
+    category: 'AI & Productivity',
+    status: 'Future',
+    description: 'Autonomous multi-agent AI operating system orchestrated by Chief Ghost with daily life connectors.',
+  },
+  {
     id: 'interview',
     name: 'Lucarc Interview',
     category: 'Enterprise Infrastructure',
     status: 'Future',
     description: 'Collaborative technical interview platform with sandboxed code execution, system design canvas, and AI rubrics.',
-  },
-  {
-    id: 'cli-tool',
-    name: 'create-lucarc-app',
-    category: 'Developer Tools',
-    status: 'Future',
-    description: 'Interactive full-stack NPX project generator across React, Next.js, Angular, Fastify, Spring Boot, and FastAPI.',
   },
   {
     id: 'ai-suite',
@@ -160,8 +167,10 @@ export const productRoadmap: RoadmapItem[] = [
 export const openSourceCommitment = {
   title: 'Open Source at Lucarc',
   description:
-    'We believe in giving back to the developer community. Whenever possible, we open-source reusable libraries, utilities, templates, and tools that help other developers build better software.',
-  githubUrl: 'https://github.com/lucarc-technologies',
+    'We believe in giving back to the developer community. We open-source production-ready tools, templates, and utilities that empower developers to build better software faster.',
+  cliCommand: 'npx create-lucarc-app my-app',
+  npmUrl: 'https://www.npmjs.com/package/create-lucarc-app',
+  githubUrl: 'https://github.com/lucarctech/create-lucarc-app',
 };
 
 export const connectLinks = {

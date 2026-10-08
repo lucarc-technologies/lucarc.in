@@ -195,11 +195,16 @@ export const productsData: Product[] = [
     tagline: 'The Ultimate Full-Stack Project Generator for Modern Software Teams',
     description:
       'An interactive NPX CLI tool that scaffolds production-ready, fully-configured applications in seconds. Choose your preferred frontend (Next.js, React, Angular), backend (Fastify, Express, Spring Boot, FastAPI), database, and UI tokens with zero boilerplate friction.',
-    status: 'future',
+    status: 'current',
+    version: '0.3.0',
+    command: 'npx create-lucarc-app',
+    npmUrl: 'https://www.npmjs.com/package/create-lucarc-app',
+    githubUrl: 'https://github.com/lucarctech/create-lucarc-app',
+    demoUrl: 'https://www.npmjs.com/package/create-lucarc-app',
     highlights: [
+      'Published on NPM (v0.3.0) — zero global install needed (npx create-lucarc-app)',
       'Composable modular scaffolding across Next.js, React, Angular, Spring Boot, & FastAPI',
       'Auto-configured Tailwind CSS v4, shadcn/ui, and Prisma/Drizzle ORM bindings',
-      'One-command Docker Compose orchestration and CI/CD pipelines',
     ],
     features: [
       {
@@ -243,6 +248,62 @@ export const productsData: Product[] = [
       'Modular AST-based and templated generation engine for zero conflicting dependencies',
       'Zero external installation needed: run directly via npx create-lucarc-app',
       'Strict TypeScript and ESLint pre-configured across all generated workspaces',
+    ],
+  },
+  {
+    name: 'PersonalOS',
+    slug: 'personal-os',
+    tagline: 'Autonomous AI Multi-Agent Operating System with Daily Life Connectors',
+    description:
+      'A private, multi-agent AI operating system orchestrated by Chief Ghost. Connect your daily digital life—job discovery, financial ledgers, shopping research, emails, and calendar blocks—with cryptographic audit trails and strict human-in-the-loop guardrails.',
+    status: 'future',
+    highlights: [
+      'Chief Agent swarm orchestration with specialized sub-agents (Jobs, Finance, Shopping, Tasks)',
+      'Pluggable daily life connectors for Greenhouse, Web Research, Mail & Calendars',
+      'Tamper-evident SHA-256 cryptographic audit logs & human-in-the-loop policy engine',
+    ],
+    features: [
+      {
+        title: 'Chief Ghost Orchestrator',
+        description: 'Decomposes complex requests, validates policy guardrails, and coordinates specialist sub-agents seamlessly.',
+        iconName: 'Sparkles',
+        category: 'Orchestration',
+      },
+      {
+        title: 'Daily Life Connectors',
+        description: 'Extensible gateway connecting job boards, research engines, financial ledgers, and productivity apps.',
+        iconName: 'GitBranch',
+        category: 'Integrations',
+      },
+      {
+        title: 'Job & Career Specialist',
+        description: 'Live Greenhouse ingestion, automated duplicate filtering, and candidate resume matching engine.',
+        iconName: 'Users',
+        category: 'Agents',
+      },
+      {
+        title: 'Finance & Ledger Safety',
+        description: 'Track discretionary budgets with strict policy locks preventing unauthorized funds movement.',
+        iconName: 'Shield',
+        category: 'Security',
+      },
+      {
+        title: 'Cryptographic Audit Trail',
+        description: 'Every agent step and tool invocation is sealed with a tamper-evident SHA-256 cryptographic hash.',
+        iconName: 'CheckSquare',
+        category: 'Audit',
+      },
+      {
+        title: 'Human-in-the-Loop Gate',
+        description: 'Sensitive operations pause for explicit user confirmation before executing external mutations.',
+        iconName: 'Clock',
+        category: 'Policy',
+      },
+    ],
+    architectureNotes: [
+      'Built as a modular monorepo (NestJS + Prisma + Next.js + BullMQ worker pipelines)',
+      'Zero-knowledge local execution options with Google Gemini 2.5 Flash synthesis',
+      'Immutable cryptographic hash chaining for all multi-agent telemetry',
     ],
   },
 ];

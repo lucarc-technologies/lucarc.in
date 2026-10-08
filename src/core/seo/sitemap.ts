@@ -6,6 +6,7 @@ export function getSitemapConfig(): MetadataRoute.Sitemap {
     '',
     '/products/siloamhr',
     '/products/prepforge',
+    '/products/cli',
     '/company/about',
     '/company/mission',
     '/company/values',

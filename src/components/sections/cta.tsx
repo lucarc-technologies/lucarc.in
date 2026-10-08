@@ -3,12 +3,22 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Mail, ArrowRight, Heart, Building2 } from 'lucide-react';
+import { Mail, ArrowRight, Heart, Building2, Copy, Check, Package } from 'lucide-react';
 import { GithubIcon } from '@/components/ui/brand-icons';
 import { Button } from '@/components/ui/button';
 import { openSourceCommitment, connectLinks } from '@/content/company';
 
 export function CTASection() {
+  const [copied, setCopied] = React.useState(false);
+
+  const handleCopy = () => {
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(openSourceCommitment.cliCommand || 'npx create-lucarc-app my-app');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,13 +87,34 @@ export function CTASection() {
                 {openSourceCommitment.description}
               </p>
 
+              {/* Interactive Terminal Quickstart Box */}
               <div className="p-4 rounded-xl border border-border bg-background font-mono text-xs text-text-secondary space-y-1 mb-8">
-                <p className="text-text-secondary/70">{'// We open-source tools & libraries'}</p>
-                <p className="text-primary">$ npx @lucarc/cli --version</p>
+                <p className="text-text-secondary/70">{'// Scaffold full-stack apps in seconds'}</p>
+                <div className="flex items-center justify-between gap-2 pt-1">
+                  <p className="text-primary font-bold overflow-x-auto">$ {openSourceCommitment.cliCommand}</p>
+                  <button
+                    type="button"
+                    onClick={handleCopy}
+                    className="p-1 rounded bg-surface border border-border hover:text-primary transition-colors flex items-center gap-1 text-[11px] shrink-0"
+                    title="Copy command"
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="h-3 w-3 text-success" />
+                        <span className="text-success font-medium">Copied</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="h-3 w-3" />
+                        <span>Copy</span>
+                      </>
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
 
-            <div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-2">
               <a
                 href={openSourceCommitment.githubUrl}
                 target="_blank"
@@ -91,9 +122,17 @@ export function CTASection() {
                 className="inline-flex items-center gap-2 text-sm font-semibold text-text hover:text-primary transition-colors"
               >
                 <GithubIcon className="h-4 w-4" />
-                <span>Visit Lucarc on GitHub</span>
+                <span>GitHub Repository</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
+
+              <Link
+                href="/products/cli"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+              >
+                <Package className="h-3.5 w-3.5" />
+                <span>Explore CLI Docs</span>
+              </Link>
             </div>
           </motion.div>
         </div>

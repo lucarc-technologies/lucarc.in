@@ -13,7 +13,9 @@ import {
   ExternalLink,
   Terminal,
   Cpu,
-  Users,
+  Copy,
+  Check,
+  Package,
   LucideIcon,
 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -23,18 +25,30 @@ import { productsData } from '@/content/products';
 const productIcons: Record<string, LucideIcon> = {
   siloamhr: Layers,
   prepforge: Code2,
-  interview: Cpu,
   cli: Terminal,
+  interview: Cpu,
+  'personal-os': Sparkles,
 };
 
 const productCategoryBadges: Record<string, { label: string; variant: 'emerald' | 'purple' | 'secondary' | 'default' }> = {
   siloamhr: { label: 'Enterprise SaaS', variant: 'emerald' },
   prepforge: { label: 'Developer Tool', variant: 'purple' },
+  cli: { label: 'Live on NPM (v0.3.0)', variant: 'emerald' },
   interview: { label: 'B2B Platform', variant: 'purple' },
-  cli: { label: 'Open Source CLI', variant: 'default' },
+  'personal-os': { label: 'AI Operating System', variant: 'purple' },
 };
 
 export function ProductsShowcase() {
+  const [copiedSlug, setCopiedSlug] = React.useState<string | null>(null);
+
+  const handleCopyCommand = (command: string, slug: string) => {
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(command);
+      setCopiedSlug(slug);
+      setTimeout(() => setCopiedSlug(null), 2500);
+    }
+  };
+
   const currentProducts = productsData.filter((p) => p.status === 'current');
   const futureProducts = productsData.filter((p) => p.status === 'future');
 
@@ -49,13 +63,12 @@ export function ProductsShowcase() {
             Tools that make real work easier
           </h2>
           <p className="mt-3 text-sm sm:text-base text-text-secondary">
-            We build software that removes friction—so your teams can focus on what matters, not on
-            juggling tools or chasing spreadsheets.
+            We build software that removes friction—from enterprise workforce automation to open-source developer tooling.
           </p>
         </div>
 
         {/* Current Flagship Products */}
-        <div className="space-y-12 mb-16">
+        <div className="space-y-12 mb-20">
           {currentProducts.map((product, index) => {
             const Icon = productIcons[product.slug] || Layers;
             const badge = productCategoryBadges[product.slug] || { label: 'Product', variant: 'default' };
@@ -95,6 +108,34 @@ export function ProductsShowcase() {
                         {product.description}
                       </p>
 
+                      {/* Interactive Command Box for CLI tool */}
+                      {product.command && (
+                        <div className="mb-6 p-3.5 rounded-xl bg-background border border-border flex items-center justify-between gap-3">
+                          <div className="flex items-center gap-2.5 font-mono text-xs sm:text-sm text-text overflow-x-auto">
+                            <span className="text-primary font-bold select-none">$</span>
+                            <code>{product.command} my-project</code>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => handleCopyCommand(`${product.command} my-project`, product.slug)}
+                            className="p-1.5 rounded-lg border border-border bg-surface hover:bg-primary/10 text-text-secondary hover:text-primary transition-colors flex items-center gap-1 text-xs shrink-0"
+                            title="Copy command"
+                          >
+                            {copiedSlug === product.slug ? (
+                              <>
+                                <Check className="h-3.5 w-3.5 text-success" />
+                                <span className="text-success font-medium">Copied!</span>
+                              </>
+                            ) : (
+                              <>
+                                <Copy className="h-3.5 w-3.5" />
+                                <span>Copy</span>
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      )}
+
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                         {product.features.slice(0, 6).map((feat) => (
                           <div key={feat.title} className="flex items-start gap-2 text-sm text-text-secondary">
@@ -108,10 +149,22 @@ export function ProductsShowcase() {
                     <div className="pt-6 border-t border-border flex items-center justify-between flex-wrap gap-4">
                       <div className="flex items-center gap-2 text-xs text-text-secondary">
                         <Shield className="h-4 w-4 text-primary" />
-                        <span>Production-ready engineering & security</span>
+                        <span>Production-ready engineering</span>
                       </div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        {product.demoUrl && (
+                        {product.npmUrl && (
+                          <a
+                            href={product.npmUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button variant="glow" size="sm">
+                              <Package className="mr-1.5 h-3.5 w-3.5" />
+                              <span>View on NPM</span>
+                            </Button>
+                          </a>
+                        )}
+                        {product.demoUrl && !product.npmUrl && (
                           <a
                             href={product.demoUrl}
                             target="_blank"
@@ -159,8 +212,11 @@ export function ProductsShowcase() {
                       </div>
                     </div>
                     <div className="mt-6 pt-6 border-t border-border flex items-center justify-between text-xs text-text-secondary">
-                      <span>Status: Active Product</span>
-                      <span className="text-primary font-semibold">Live Ecosystem</span>
+                      <span className="flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-success" />
+                        Live in Production
+                      </span>
+                      <span className="text-primary font-semibold font-mono">Active Ecosystem</span>
                     </div>
                   </div>
                 </motion.div>
@@ -169,7 +225,7 @@ export function ProductsShowcase() {
           })}
         </div>
 
-        {/* Upcoming Ecosystem Additions (Lucarc Interview & create-lucarc-app) */}
+        {/* Upcoming Ecosystem Additions (PersonalOS & Lucarc Interview) */}
         {futureProducts.length > 0 && (
           <div>
             <div className="text-center max-w-2xl mx-auto mb-10">
@@ -180,7 +236,7 @@ export function ProductsShowcase() {
                 Expanding the Lucarc Ecosystem
               </h3>
               <p className="mt-2 text-xs sm:text-sm text-text-secondary">
-                Next-generation developer platforms and enterprise hiring infrastructure built for modern workflows.
+                Next-generation developer platforms and autonomous agentic operating systems built for modern workflows.
               </p>
             </div>
 
