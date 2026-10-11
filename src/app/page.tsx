@@ -3,6 +3,7 @@ import {
   ProductsShowcase,
   PrinciplesSection,
   RoadmapSection,
+  EarlyAccessSection,
   CTASection,
 } from '@/components/sections';
 
@@ -13,6 +14,7 @@ export default function HomePage() {
       <ProductsShowcase />
       <PrinciplesSection />
       <RoadmapSection />
+      <EarlyAccessSection />
       <CTASection />
     </main>
   );

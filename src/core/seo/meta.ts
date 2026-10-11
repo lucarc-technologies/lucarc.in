@@ -7,15 +7,18 @@ export const defaultMetadata: Metadata = {
     template: '%s | Lucarc',
   },
   description:
-    'We create modern SaaS products, developer tools, and AI-powered solutions designed to solve real-world problems. Discover SiloamHR HRMS and PrepForge interview prep platform.',
+    'Lucarc builds modern SaaS products, developer tools, and autonomous AI solutions. Explore create-lucarc-app CLI, PrepForge interview platform, SiloamHR, and PersonalOS.',
   keywords: [
     'Lucarc',
-    'Enterprise SaaS',
-    'HRMS',
-    'SiloamHR',
-    'PrepForge',
+    'create-lucarc-app',
     'Developer Tools',
-    'AI Applications',
+    'Full-Stack Scaffolder',
+    'PrepForge',
+    'DSA Patterns',
+    'PersonalOS',
+    'AI Agents',
+    'SiloamHR',
+    'Enterprise SaaS',
     'Software Engineering',
     'Multi-Tenant Architecture',
   ],
@@ -28,7 +31,7 @@ export const defaultMetadata: Metadata = {
     url: 'https://lucarc.in',
     title: 'Lucarc — Building software that helps businesses work smarter and developers grow',
     description:
-      'Modern SaaS products, developer tools, and AI-powered solutions designed to solve real-world problems.',
+      'Lucarc builds modern SaaS products, developer tools, and autonomous AI solutions. Discover create-lucarc-app, PrepForge, SiloamHR, and PersonalOS.',
     siteName: 'Lucarc',
     images: [
       {
@@ -43,7 +46,7 @@ export const defaultMetadata: Metadata = {
     card: 'summary_large_image',
     title: 'Lucarc — Building software that helps businesses work smarter and developers grow',
     description:
-      'Modern SaaS products, developer tools, and AI-powered solutions designed to solve real-world problems.',
+      'Lucarc builds modern SaaS products, developer tools, and autonomous AI solutions. Discover create-lucarc-app, PrepForge, SiloamHR, and PersonalOS.',
     images: ['/lucarc_dark.png'],
   },
   applicationName: 'Lucarc',

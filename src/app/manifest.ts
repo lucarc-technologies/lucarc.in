@@ -5,13 +5,13 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Lucarc — Software Ecosystem',
     short_name: 'Lucarc',
     description:
-      'Building software that helps businesses work smarter and developers grow. Discover SiloamHR HRMS and PrepForge interview prep platform.',
+      'Lucarc builds modern SaaS products, developer tools, and autonomous AI solutions. Explore create-lucarc-app, PrepForge, SiloamHR, and PersonalOS.',
     start_url: '/',
     display: 'standalone',
     orientation: 'portrait',
     background_color: '#FAF6F0',
     theme_color: '#D45B3E',
-    categories: ['business', 'productivity', 'utilities'],
+    categories: ['business', 'productivity', 'developer', 'utilities'],
     icons: [
       {
         src: '/logo.png',
@@ -27,6 +27,13 @@ export default function manifest(): MetadataRoute.Manifest {
       },
     ],
     shortcuts: [
+      {
+        name: 'create-lucarc-app',
+        short_name: 'CLI Scaffolder',
+        description: 'Full-Stack Project Generator on NPM',
+        url: '/products/cli',
+        icons: [{ src: '/logo.png', sizes: '96x96' }],
+      },
       {
         name: 'SiloamHR',
         short_name: 'SiloamHR',
